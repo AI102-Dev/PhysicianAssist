@@ -1,0 +1,5 @@
+{
+  "name": "AI Physician's Assistant",
+  "description": "An AI-powered chat agent to assist clinic physicians by summarizing patient information, visualizing medical history, recording conversations, and simulating clinical administrative tasks.",
+  "requestFramePermissions": []
+}
