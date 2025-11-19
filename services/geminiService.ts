@@ -2,10 +2,8 @@ import { GoogleGenAI, Type, FunctionDeclaration, GenerateContentResponse, Conten
 import type { Patient, VisualizationData, ChatMessage } from '../types';
 import * as dbService from '../dbService'; // Import dbService for logging
 
-if (!process.env.API_KEY) {
-    throw new Error("API_KEY environment variable not set");
-}
-
+// The API key must be obtained exclusively from the environment variable process.env.API_KEY.
+// Assume this variable is pre-configured, valid, and accessible.
 const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
 
 const summaryAndVizSchema = {

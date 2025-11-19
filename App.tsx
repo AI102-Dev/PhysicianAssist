@@ -58,7 +58,7 @@ const App: React.FC = () => {
   }
 
   return (
-    <div className="flex h-screen w-full flex-col font-sans">
+    <div className="flex h-screen w-full flex-col font-sans bg-gray-100 dark:bg-gray-900">
       <Header />
       <div className="flex flex-1 overflow-hidden">
         <Sidebar 
