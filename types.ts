@@ -43,6 +43,7 @@ export interface ChatMessage {
   visualizationData?: VisualizationData;
   consultationSummary?: string;
   groundingUrls?: { uri: string; title: string; }[]; // Added for Google Search results
+  type?: 'error' | 'info' | 'success' | 'warning'; // Added for semantic styling
 }
 
 export interface AilmentVisualization {
@@ -76,4 +77,10 @@ export interface LogEntry {
   component: string;
   message: string;
   details?: Record<string, any>;
+}
+
+export interface Toast {
+  message: string;
+  id: number;
+  type: 'success' | 'error' | 'info' | 'warning';
 }

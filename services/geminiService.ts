@@ -55,7 +55,7 @@ const summaryAndVizSchema = {
 const functionDeclarations: FunctionDeclaration[] = [
   {
     name: 'updatePatientRecord',
-    description: "Updates a patient's record with a new ailment or medication. Use this to add prescriptions.",
+    description: "Updates a patient's record by adding new ailments or medications, or by modifying existing ailments (e.g., changing severity) or medications.",
     parameters: {
       type: Type.OBJECT,
       properties: {
@@ -82,6 +82,31 @@ const functionDeclarations: FunctionDeclaration[] = [
                 instructions: { type: Type.STRING, description: "Optional instructions, e.g. 'Take with food.'" }
             },
             required: ["name", "dosage", "frequency", "startDate"]
+        },
+        updatedAilment: {
+          type: Type.OBJECT,
+          description: "Updates an existing ailment in the patient's history. Provide the ailment's ID and any fields to update.",
+          properties: {
+            id: { type: Type.STRING, description: "The ID of the ailment to update." },
+            name: { type: Type.STRING, description: "Optional: New name for the ailment." },
+            notes: { type: Type.STRING, description: "Optional: Updated clinical notes about the ailment." },
+            severity: { type: Type.NUMBER, description: "Optional: New severity from 1 to 10." },
+          },
+          required: ["id"]
+        },
+        updatedMedication: {
+          type: Type.OBJECT,
+          description: "Updates an existing medication for the patient. Provide the medication's ID and any fields to update.",
+          properties: {
+            id: { type: Type.STRING, description: "The ID of the medication to update." },
+            name: { type: Type.STRING, description: "Optional: New name for the medication." },
+            dosage: { type: Type.STRING, description: "Optional: New dosage." },
+            frequency: { type: Type.STRING, description: "Optional: New frequency." },
+            startDate: { type: Type.STRING, description: "Optional: New start date (YYYY-MM-DD)." },
+            endDate: { type: Type.STRING, description: "Optional: New end date (YYYY-MM-DD)." },
+            instructions: { type: Type.STRING, description: "Optional: New instructions, e.g. 'Take with food.'" }
+          },
+          required: ["id"]
         }
       },
     }
@@ -203,13 +228,14 @@ export const getNextChatResponse = async (patient: Patient, history: Content[]):
     
     ${patientDataString}
     
-    Your role is to answer the physician's questions. Use the provided tools to update records, search the medicine database, simulate actions like sending prescriptions/emails, save/retrieve long-term insights, or perform web searches.
+    Your role is to answer the physician's questions. Use the provided tools to add new records, modify existing records (e.g., update ailment severity or medication details, or update an ailment's notes using their IDs), search the medicine database, simulate actions like sending prescriptions/emails, save/retrieve long-term insights, or perform web searches.
     - When a tool is used successfully, the system will confirm. Briefly acknowledge this confirmation to the user. For example, "Done. The prescription has been sent." or "Okay, I've added that to the patient's record."
     - Do not ask for confirmation before using a tool. If the user's request is clear, use the tool directly.
     - Keep your text responses concise and clinical for patient-related tasks. For general queries, provide brief acknowledgments of using the tool or directly answer.
     - If a query requires up-to-date information not found in the patient data, use the 'googleSearch' tool. Always extract and list the URLs from the search results (grounding chunks).
     - Use 'saveInsight' to store important patient details, common medical advice, or useful general knowledge that might be relevant for future consultations or other users.
-    - Use 'retrieveInsights' to recall information you might have previously stored.`;
+    - Use 'retrieveInsights' to recall information you might have previously stored.
+    - If asked to update an existing ailment or medication and an ID is not provided, try to infer it from the context or ask the physician for clarification.`;
     
     try {
         const response = await ai.models.generateContent({
