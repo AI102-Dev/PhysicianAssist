@@ -4,8 +4,9 @@ import * as dbService from '../dbService'; // Import dbService for logging
 
 // The API key must be obtained exclusively from the environment variable process.env.API_KEY.
 // Assume this variable is pre-configured, valid, and accessible.
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+//const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
 
+const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_API_KEY });
 const summaryAndVizSchema = {
     type: Type.OBJECT,
     properties: {
