@@ -1,0 +1,133 @@
+{
+  "source_folder": "PhysicianAssist\\PhysicianAssist",
+  "source_branch": "main",
+  "source_head": "d4fe43e094b7dc1749364d738e62e0e24b332921",
+  "purpose": "Pre-Linux migration backup; original workspace unchanged",
+  "excluded": [
+    {
+      "path": ".env",
+      "reason": "environment secrets"
+    },
+    {
+      "path": ".env.local",
+      "reason": "environment configuration: secure backup required"
+    },
+    {
+      "path": "node_modules/",
+      "reason": "generated logs, dependency or cache"
+    }
+  ],
+  "redacted_files": [],
+  "files": [
+    {
+      "path": ".gitignore",
+      "raw_sha256": "a6fae3668e8b9353678dc4d71c014b180a4ff4266046ae734fa9031525c9616d",
+      "size": 287
+    },
+    {
+      "path": "ARCHITECTURE.md",
+      "raw_sha256": "92cd660c527071165bbd2c0d4217586b9e114576c6885add25fb732c45812617",
+      "size": 39930
+    },
+    {
+      "path": "App.tsx",
+      "raw_sha256": "0b9046b6ab05b7dbf0caaab42c13573b3097c92e12e56ee4c53578c6e2e966b0",
+      "size": 3117
+    },
+    {
+      "path": "README.md",
+      "raw_sha256": "8b2c9692e18d88277fd380f07a2b5440c6c3120396273c31c0cb3df1dcd08f52",
+      "size": 40507
+    },
+    {
+      "path": "components/AilmentNotesEditor.tsx",
+      "raw_sha256": "3c704ecacdf131c8380402cafe767c42d9124c303a9fbe076651756eb5cd9aaf",
+      "size": 4485
+    },
+    {
+      "path": "components/ChatInterface.tsx",
+      "raw_sha256": "66d2922220001cb6d2f796005f74a99d8b28cbda5afffe1fc92f0bf55a403109",
+      "size": 24481
+    },
+    {
+      "path": "components/Header.tsx",
+      "raw_sha256": "6bb42ab67eb4865bfb01a6c2da76439067bfd9074fde00c327ca602c31c19ceb",
+      "size": 743
+    },
+    {
+      "path": "components/PatientSummary.tsx",
+      "raw_sha256": "eb7d03bf3ec6b6f56ec783a6bf8d6840eab49c5cf26f69e47042f9c27d1d4ed7",
+      "size": 533
+    },
+    {
+      "path": "components/Sidebar.tsx",
+      "raw_sha256": "6c6fedefaf2a2523c97db5d4d394996fec0fb014629ce62745ab0f0d7e662ba2",
+      "size": 2370
+    },
+    {
+      "path": "components/VisualizationPanel.tsx",
+      "raw_sha256": "971521e296419cde7f0fcb7ecbd5f28f88bf2e24692089c0ddd810a814f5d77b",
+      "size": 3898
+    },
+    {
+      "path": "components/icons.tsx",
+      "raw_sha256": "4bcb592ecd07e66495c0476fc8b997d0a3fcf4aef6795a55e8370b3d535912f4",
+      "size": 4871
+    },
+    {
+      "path": "constants.ts",
+      "raw_sha256": "2e725068c70a971be9b8e0d9b5948d15173c13cbde7d93e0767dade679db060c",
+      "size": 5007
+    },
+    {
+      "path": "dbService.ts",
+      "raw_sha256": "097dc5b87b380575396e29af03bf0b8f563c91065ea7a8fb375d70e621bdba0b",
+      "size": 9976
+    },
+    {
+      "path": "index.html",
+      "raw_sha256": "d793aaea380b7e7441f5e2684828f038bf5336330f66cd84505675f290215157",
+      "size": 851
+    },
+    {
+      "path": "index.tsx",
+      "raw_sha256": "c8368b4685b8654189db96e9fa4d5645a645eb0a77bc5f80c896b814f349b2a1",
+      "size": 367
+    },
+    {
+      "path": "metadata.json",
+      "raw_sha256": "1ac1e582aa8d7dfb4f133f707a67415c801ff8af530bdbe327e253439d77807e",
+      "size": 309
+    },
+    {
+      "path": "package-lock.json",
+      "raw_sha256": "e263a95fcca24da2974f8319fae8b656d59dd192b2940c8745602841ab745c45",
+      "size": 106588
+    },
+    {
+      "path": "package.json",
+      "raw_sha256": "4f38485c080ce72761f31a3ccf26bc78fa5fa1807af3f1b225fb9bd42088d565",
+      "size": 501
+    },
+    {
+      "path": "services/geminiService.ts",
+      "raw_sha256": "e0f7ecb8c5006d04bfbfba4b506f579bea9ceaadb960203933a5cfa03967b60f",
+      "size": 14578
+    },
+    {
+      "path": "tsconfig.json",
+      "raw_sha256": "87d3eb8a957369a386144312f42d6c34cfbd88bcf9dcbf17e8bfe0fd90c00abe",
+      "size": 570
+    },
+    {
+      "path": "types.ts",
+      "raw_sha256": "b54f2a7adde9e6c0991efb85da6b3b6bfa36b19a93705e08c3914011a9e4a3d5",
+      "size": 1990
+    },
+    {
+      "path": "vite.config.ts",
+      "raw_sha256": "d5169368c49dcc99df160d85f17654cc93b66cc0c9ea7cc60f0133fb34da7806",
+      "size": 603
+    }
+  ]
+}
